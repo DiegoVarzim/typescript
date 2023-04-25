@@ -76,21 +76,21 @@
 
 // INTERSECTION
 
-type User = {
-    firstName: string
-    age: number
-}
+// type User = {
+//     firstName: string
+//     age: number
+// }
 
-type JobRole = {
-    id: number
-    role: string
-}
+// type JobRole = {
+//     id: number
+//     role: string
+// }
 
-type employee = User & JobRole
-const e1: employee = {
-    firstName: 'Diego',
-    age: 40,
-    id: 221,
-    role: 'Admin'
-}
+// type employee = User & JobRole
+// const e1: employee = {
+//     firstName: 'Diego',
+//     age: 40,
+//     id: 221,
+//     role: 'Admin'
+// }
 
