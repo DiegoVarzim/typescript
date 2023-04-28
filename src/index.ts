@@ -217,10 +217,62 @@
 // product1.itemPurchased('You just bought a')
 
 
-// DAY 5 - EXERCISE 1
+// // DAY 5 - EXERCISE 1
 
-function addToCart(item: {id: number, title: string, variantId: number}) {
-    console.log(`Adding "${item.title}" to cart.`);
+// interface CartItem {
+//     id: number
+//     title: string
+//     variantId?: number
+// }
+
+// function addToCart(item: CartItem) {
+//     console.log(`Adding "${item.title}" to cart.`);
+// }
+
+// addToCart({id: 1, title: 'flops'});
+
+
+// DAY 5 - EXERCISE 2
+
+
+// interface Person {
+//    name: string
+//    age: number
+// }
+
+// class Person implements Person {
+//     constructor(public name: string, public age: number) {}
+// }
+
+// const jane = new Person('Diego', 31);
+
+// console.log(`${jane.name} is ${jane.age} years old.`);
+
+
+// // DAY 5 - EXERCISE 3
+
+// class MC {
+//     greet(event: string = 'party'): string {
+//         return `Welcome to the ${event}`;
+//     }
+// }
+
+// const mc = new MC();
+// console.log(mc.greet('show1'));
+
+
+// DAY 5 - EXERCISE 4
+
+class Employee {
+    title: string;
+    salary: number;
+    constructor(title: string, salary: number) {
+        this.title = title;
+        this.salary = salary
+    }
 }
 
-addToCart({id: 1, title: 'shoes'});
+const employee = new Employee('Engineer', 100000);
+
+console.log(`The new employee's title is ${employee.title}) and they earn $ ${employee.salary}.`);
+
