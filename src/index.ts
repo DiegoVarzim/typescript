@@ -163,7 +163,64 @@
 
 // Declaring all variables
 
-let code: number = 71
-console.log(code)
+// let code: number = 71
+// console.log(code)
 
 
+// class Users {
+//     name: string
+//     public balance: number = 0
+
+//     constructor(n: string, b: number) {
+//         this.name = n
+//         this.balance = b
+//     }
+
+//     addMoney(amount: number) {
+//         this.balance += amount
+//     }
+// }
+
+// const user1 = new Users('Diego', 10)
+// user1.balance = 500
+// user1.addMoney(100)
+// user1.addMoney(30)
+
+// const user2 = new Users('Mariana', 20)
+// user2.addMoney(30)
+// user2.addMoney(50)
+
+// console.log(user1)
+// console.log(user2)
+
+
+
+
+// interface Item {
+//     name: string
+//     price: number
+
+//     itemPurchased(message: string): void
+
+// }
+
+// let product1: Item
+
+// product1 = {
+//     name: 'Apple',
+//     price: 2,
+//     itemPurchased(message: string) {
+//         console.log(message + ' ' + this.name)
+//     }
+// }
+
+// product1.itemPurchased('You just bought a')
+
+
+// DAY 5 - EXERCISE 1
+
+function addToCart(item: {id: number, title: string, variantId: number}) {
+    console.log(`Adding "${item.title}" to cart.`);
+}
+
+addToCart({id: 1, title: 'shoes'});
