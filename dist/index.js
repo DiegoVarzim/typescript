@@ -164,11 +164,75 @@
 // }
 // const jane = new Person('Diego', 31);
 // console.log(`${jane.name} is ${jane.age} years old.`);
-// DAY 5 - EXERCISE 3
-class MC {
-    greet(event = 'party') {
-        return `Welcome to the ${event}`;
+// // DAY 5 - EXERCISE 3
+// class MC {
+//     greet(event: string = 'party'): string {
+//         return `Welcome to the ${event}`;
+//     }
+// }
+// const mc = new MC();
+// console.log(mc.greet('show1'));
+// DAY 5 - EXERCISE 4
+// class Employee {
+//     constructor(public title: string, public salary: number) {}
+// }
+// const employee = new Employee('Engineer', 1100000);
+// console.log(`The new employee's title is ${employee.title}) and they earn $ ${employee.salary}.`);
+// DAY 5 - EXERCISE 5
+// interface UserSchema {
+//     id: number
+//     name: string
+// }
+// class User implements UserSchema {
+//     constructor(public name: string, readonly id: number) {}
+// }
+// const user = new User('Dog', 1)
+// console.log(user.id)
+// user.name = 'Harold' // pode mudar
+// console.log(`User:`, user)
+// READOLY - dentro de classes no TS
+// class Movies {
+//     constructor(
+//         public readonly id: number, 
+//         public name: string, 
+//         private _price: number
+//         ) {
+//     }
+// }
+// let movie1 = new Movies(1, 'Interstellar', 20)
+// console.log(movie1)
+// class HotelRooms {
+//     [roomNumber: string]: string
+// }
+// let room = new HotelRooms()
+// room.A201 = 'Andre'
+// room.A202 = 'Ana'
+// room.A17 = 'Marcos'
+// console.log(room)
+// INHERITANCE
+class Person {
+    constructor(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    get greet() {
+        return this.firstName + ' ' + this.lastName;
     }
 }
-const mc = new MC();
-console.log(mc.greet('show1'));
+// Cliente do banco
+class Clients extends Person {
+    get greet() {
+        return 'Dear ' + super.greet;
+    }
+}
+// Funcionário do banco
+class Staff extends Person {
+    get greet() {
+        return 'Hi ' + super.greet;
+    }
+}
+let client1 = new Clients('Andre', 'Iacono', 25);
+let staff1 = new Staff('Ana', 'Silva', 30);
+console.log(client1.greet);
+console.log(staff1.greet);
