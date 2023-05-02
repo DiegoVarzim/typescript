@@ -330,40 +330,172 @@
 // INHERITANCE
 
 
-class Person {
-    constructor(public firstName: string, public lastName: string, public age: number) {}
+// class Person {
+//     constructor(public firstName: string, public lastName: string, public age: number) {}
 
-    get greet() {
-       return this.firstName + ' ' + this.lastName
-    }
-}
+//     get greet() {
+//        return this.firstName + ' ' + this.lastName
+//     }
+// }
 
-// Cliente do banco
+// // Cliente do banco
 
-class Clients extends Person {
-   override get greet() {
-        return 'Dear ' + super.greet
-     }
+// class Clients extends Person {
+//    override get greet() {
+//         return 'Dear ' + super.greet
+//      }
     
+// }
+
+
+
+// // Funcionário do banco
+// class Staff extends Person {
+//     override get greet() {
+//         return 'Hi ' + super.greet
+//      }
+
+// }
+
+// let client1 = new Clients('Andre', 'Iacono', 25)
+// let staff1 = new Staff('Ana', 'Silva', 30)
+
+// console.log(client1.greet)
+// console.log(staff1.greet)
+
+
+// DAY 7 - EXERCISE 1
+
+// interface User {
+//     name: string
+//     age: number
+//     occupation: string
+// }
+
+// interface Admin {
+//     name: string;
+//     age: number;
+//     role: string;
+// }
+
+// type Person = User | Admin;
+
+// const persons: Person[] = [
+//     {
+//         name: 'Max Mustermann',
+//         age: 25,
+//         occupation: 'Chimney sweep'
+//     },
+//     {
+//         name: 'Jane Doe',
+//         age: 32,
+//         role: 'Administrator'
+//     },
+//     {
+//         name: 'Kate Muller',
+//         age: 23,
+//         occupation: 'Astronaut'
+//     },
+//     {
+//         name: 'Bruce Willis',
+//         age: 64,
+//         role: 'World saver'
+//     }
+// ];
+
+// function logPerson(person: Person) {
+//     let additionalInformation: string;
+//     if ('role' in person) {
+//         additionalInformation = person.role;
+//     } else {
+//         additionalInformation = person.occupation;
+//     }
+//     console.log(` - ${person.name}, ${person.age}, ${add}`)
+// }
+
+// persons.forEach(logPerson);
+
+
+// DAY 7 - EXERCISE 2
+
+// class Animal {
+//     constructor(public name: string) {}
+//     move(meters: number) {
+//         console.log(`${this.name} moved ${meters}m.`)
+//     }
+// }
+
+// class Snake extends Animal{
+//     move(meters: number = 5) {
+//         console.log('Slithering...')
+//     super.move(meters)
+//     }
+// }
+
+// class Pony extends Animal{
+//     move(meters: number) {
+//         console.log('Galloping...')
+//         super.move(meters)
+//     }
+// }
+
+// const sammy = new Snake("Sammy the Snake")
+// sammy.move()
+
+// const pokey = new Pony("Pokey the Pony")
+// pokey.move(34)
+
+
+// DAY 7 - EXERCISE 3
+
+// class Furniture {
+//    constructor(protected manufacturer: string = 'IKEA') {}
+// }
+
+// class Desk extends Furniture {
+//    kind() {
+//        console.log(`This is a desk made by ${this.manufacturer}`)
+//    }
+// }
+
+// class Chair extends Furniture {
+//    kind() {
+//        console.log(`This is a chair made by ${this.manufacturer}`)
+//    }
+// }
+
+// const desk = new Desk()
+// desk.kind()
+// // desk.manufacturer // Deve retornar um erro
+
+// const chair = new Chair()
+// chair.kind()
+// // chair.manufacturer // Deve retornar um erro
+
+
+// DAY 7 - EXERCISE 4
+
+// let multiply: (val1: number, val2: number) => number;
+// let capitalize: (val: string) => string;
+
+// multiply = function(x: number, y: number): number {
+//    return x * y;
+// }
+
+// capitalize = function(value: string): string {
+//       return `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
+// }
+
+
+// console.log(capitalize(`nifty is ${multiply(6, 10)}`));
+
+
+//  DAY 7 - EXERCISE 5
+
+
+function layEggs(quantity: number, color: string): void {
+   console.log(`You just laid ${quantity} ${color} eggs. Good job!`);
 }
 
-
-
-// Funcionário do banco
-class Staff extends Person {
-    override get greet() {
-        return 'Hi ' + super.greet
-     }
-
-}
-
-let client1 = new Clients('Andre', 'Iacono', 25)
-let staff1 = new Staff('Ana', 'Silva', 30)
-
-console.log(client1.greet)
-console.log(staff1.greet)
-
-
-
-
+layEggs(10, 'reds');
 
